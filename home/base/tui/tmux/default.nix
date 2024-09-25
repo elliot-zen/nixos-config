@@ -4,7 +4,7 @@
     keyMode = "vi";
     clock24 = true;
     mouse = true;
-    terminal = "screen-256color";
+    terminal = "xterm-256color";
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;

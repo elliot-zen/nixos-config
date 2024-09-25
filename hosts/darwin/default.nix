@@ -6,6 +6,7 @@
   environment.systemPackages =[ 
     pkgs.neovim
     pkgs.direnv
+    pkgs.mongosh
   ];
 
   programs.zsh.enable = true;
