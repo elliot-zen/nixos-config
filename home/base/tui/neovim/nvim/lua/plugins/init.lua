@@ -12,12 +12,13 @@ return {
       require "configs.lspconfig"
     end,
   },
-  { "rcarriga/nvim-dap-ui",
+  {
+    "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
-    config = function ()
+    config = function()
       require "configs.dap"
     end
   },
@@ -27,6 +28,17 @@ return {
     config = function()
       require("nvim-surround").setup({})
     end,
+  },
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "configs.noice"
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    }
   }
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
