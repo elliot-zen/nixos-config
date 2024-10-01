@@ -13,32 +13,20 @@
     };
   };
 
-  outputs = {self, nix-darwin, nixpkgs, home-manager,...}: 
+  outputs = {self, nixpkgs, home-manager,nix-darwin,...}@inputs: 
+  let 
+    mkSystem = import ./lib/mksystem.nix {
+      inherit nixpkgs inputs;
+    };
+  in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = mkSystem "nixos"{
         system = "x86_64-linux";
-        modules = [ 
-          ./hosts/nixos/configuration.nix 
-          home-manager.nixosModules.home-manager {
-            home-manager.backupFileExtension = "backup";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.elliot = import ./home/nixos;
-          }
-        ];
+        user = "elliot";
       };
-      darwinConfigurations."zhaokaideMacBook-Pro" = nix-darwin.lib.darwinSystem{
+      darwinConfigurations."zhaokaideMacBook-Pro" = mkSystem "zhaokaideMacBook-Pro"{
         system = "aarch64-darwin";
-        modules = [ 
-          ./hosts/darwin
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.backupFileExtension = "backup";
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.elliot = import ./home/darwin;
-          }
-        ];
+        user = "elliot";
       };
     };
 }
