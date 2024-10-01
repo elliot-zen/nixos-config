@@ -10,6 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.firewall.enable = false;
 
   time.timeZone = "Asia/Shanghai";
 
@@ -54,6 +55,7 @@
     unzip
 
     # Daily tool
+    firefox
     google-chrome
     v2raya
     xdg-desktop-portal-hyprland
