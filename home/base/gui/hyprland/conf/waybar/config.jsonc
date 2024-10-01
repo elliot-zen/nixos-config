@@ -1,0 +1,48 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "margin" : "9 13 -10 18",
+
+    "modules-left": [
+      "hyprland/workspaces",
+      "keyboard-state",
+      "hyprland/submap"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "custom/mem",
+      "cpu",
+      "backlight", 
+      "tray"
+    ],
+
+    "hyprland/workspaces" : {
+      "disable-scroll" : true
+    },
+
+    "keyboard-state" : {
+        "capslock" : true,
+        "format" :  "{icon} ",
+        "format-icons" : {
+            "locked":  " ",
+            "unlocked" : ""
+        }
+    },
+
+    "clock" : {
+        "timezone" : "Asia/Shanghai",
+        "tooltip-format" : "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format" : "{:%a; %d %b, %I:%M %p}"
+    },
+
+    "tray": {
+      "icon-size": 16,
+      "spacing": 0
+    }
+}
+
+

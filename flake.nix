@@ -13,21 +13,32 @@
     };
   };
 
-  outputs = {self, nix-darwin, nixpkgs, home-manager,...}: {
-    darwinConfigurations = {
-      "zhaokaideMacBook-Pro" = nix-darwin.lib.darwinSystem {
+  outputs = {self, nix-darwin, nixpkgs, home-manager,...}: 
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ 
+          ./hosts/nixos/configuration.nix 
+          home-manager.nixosModules.home-manager {
+            home-manager.backupFileExtension = "backup";
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.elliot = import ./home/nixos;
+          }
+        ];
+      };
+      darwinConfigurations."zhaokaideMacBook-Pro" = nix-darwin.lib.darwinSystem{
         system = "aarch64-darwin";
         modules = [ 
           ./hosts/darwin
-           home-manager.darwinModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.elliot = import ./home/darwin;
-            }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.backupFileExtension = "backup";
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.elliot = import ./home/darwin;
+          }
         ];
       };
     };
-  };
 }
