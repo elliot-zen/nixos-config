@@ -1,0 +1,256 @@
+@import "mocha.css";
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+    70% {
+        color: @text;
+    }
+
+    to {
+        color: @text;
+        background-color: @peach;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @text;
+    }
+
+    to {
+        color: @text;
+        background-color: @red;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    border-radius: 10px;
+    background: transparent;
+    color: @text;
+    font-family: Cantarell, Noto Sans, sans-serif;
+    font-size: 14px;
+}
+
+/* Each module */
+#custom-arch,
+#hardware,
+#hardware2,
+#indicators,
+#time,
+#mpd,
+#window,
+#workspaces,
+#language,
+#taskbar,
+#tray {
+  border-radius: 10px;
+  background-color: alpha(@base, 0.7);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+
+}
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: @peach;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#time {
+  /* No styles */
+}
+
+#cpu {
+  /* No styles */
+}
+
+#cpu.warning {
+    color: @peach;
+}
+
+#cpu.critical {
+    color: @red;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: @peach;
+}
+
+#memory.critical {
+    color: @red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+
+#network {
+    /* No styles */
+}
+
+#network.disconnected {
+    color: @peach;
+}
+
+#pulseaudio {
+    /* No styles */
+}
+
+#pulseaudio.muted {
+  color: @teal;
+}
+
+#wireplumber {
+	/*No Styles*/
+}
+
+#wireplumber.muted {
+ color:@teal;
+ }
+
+
+#temperature {
+    /* No styles */
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+#tray {
+    /* No styles */
+}
+
+#window {
+    font-weight:bold; 
+}
+
+window#waybar.empty #window {
+    border: none;	
+    color: transparent;
+    background-color: transparent;
+}
+
+window#waybar.fullscreen #window {
+   border-color: @base;
+   color: @base;
+   background-color: @text;
+}
+
+
+#workspaces button {
+    border-radius: 10px;
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: @text;
+}
+
+#workspaces button.active {
+    border-radius: 10px;
+    border-color: @text;
+    color: @base;
+    background-color: @text; 
+}
+
+#workspaces button.urgent {
+    border-radius: 10px;
+    border-color: @peach;
+    color: @base;
+    background-color: @red;
+}
+
+#taskbar button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 9px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 0px;
+    color: @wb-color;
+    animation: tb_normal 20s ease-in-out 1;
+}
+
+#taskbar button.active {
+    background: @text;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+    animation: tb_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+    background: @peach;
+    animation: tb_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar.empty {
+
+    border: none;	
+    color: transparent;
+    background-color: transparent;
+}
+
+#custom-arch {
+ /* margin-left: 20px;*/
+}
+
+#indicators {
+  /*margin-right: 20px;*/
+}
+

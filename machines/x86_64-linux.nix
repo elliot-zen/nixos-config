@@ -46,15 +46,14 @@
     # Daily tool
     firefox
     google-chrome
-    v2raya
-    xdg-desktop-portal-hyprland
-    nwg-look
 
     # Hyprland
     hyprland
     rofi-wayland
     waybar
     dunst
+    xdg-desktop-portal-hyprland
+    nwg-look
   ];
 
   programs.neovim = {
@@ -69,6 +68,7 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    font-awesome
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
