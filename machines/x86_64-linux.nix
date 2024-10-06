@@ -49,6 +49,8 @@
 
     # Hyprland
     hyprland
+    hyprlock
+    hyprpaper
     rofi-wayland
     waybar
     dunst
