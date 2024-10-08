@@ -7,4 +7,8 @@
     pkgs.neovim
     pkgs.mongosh
   ];
+
+  environment.variables = {
+    LANG = "en_US.UTF-8";
+  };
 }
