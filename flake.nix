@@ -27,6 +27,7 @@
       darwinConfigurations."zhaokaideMacBook-Pro" = mkSystem "zhaokaideMacBook-Pro"{
         system = "aarch64-darwin";
         user = "elliot";
+        darwin = true;
       };
     };
 }

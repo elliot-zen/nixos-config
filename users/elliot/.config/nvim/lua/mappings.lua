@@ -12,5 +12,5 @@ map("n", "<F5>", "<cmd> lua require('dap').continue() <cr>")
 
 map("i", "jk", "<ESC>")
 map("n", "<leader>cl", "<cmd> cclose <cr>")
-
+map("n", "<leader>fl", "<cmd> Telescope lsp_document_symbols <cr>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
