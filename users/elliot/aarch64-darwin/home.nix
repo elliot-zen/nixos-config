@@ -6,6 +6,10 @@
   programs.home-manager.enable = true;
   home.packages = [];
 
+  home.shellAliases = {
+    v = "nvim";
+  };
+
   programs.git = {
     enable = true;
     userName = "elliot";
@@ -14,5 +18,5 @@
 
   home.activation.configDotfile = lib.hm.dag.entryAfter ["writeBoundary"] ''
     ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${../.config/nvim}/ ~/.config/nvim/
-  '';
-}
+    '';
+                        }
