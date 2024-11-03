@@ -10,9 +10,9 @@
 			},
 			{
 				"language": [
-					"lua"
+					"go"
 				],
-				"path": "./lua.json"
+				"path": "./snippets/go.json"
 			}
 		]
 	}

@@ -1,0 +1,15 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "import (",
+      "  \"fmt\"",
+      ")",
+      "func main() {",
+      "  fmt.Println(\"Hello word\")",
+      "}"
+    ],
+    "description": ""
+  }
+}

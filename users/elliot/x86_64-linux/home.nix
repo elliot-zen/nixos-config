@@ -5,14 +5,17 @@
   ];
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
-  home.packages = [
-    pkgs.localsend
-    pkgs.xfce.thunar
-    pkgs.wl-clipboard
-    pkgs.xdg-utils # provides cli tools such as `xdg-mime` `xdg-open`
+  home.packages = with pkgs; [
+    localsend
+    xfce.thunar
+    wl-clipboard
+    xdg-utils # provides cli tools such as `xdg-mime` `xdg-open`
 
-    pkgs.clash-verge-rev
-    pkgs.rsync
+    grim
+    slurp
+    clash-verge-rev
+    rsync
+    mitmproxy
   ];
 
   programs.git = {
@@ -37,7 +40,7 @@
     };
   };
 
-  home.activation.configDotfile = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${../.config}/ ${config.xdg.configHome}/
-  '';
+  # home.activation.configDotfile = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  #   ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${../.config}/ ${config.xdg.configHome}/
+  # '';
 }

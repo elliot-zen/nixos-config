@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }:
-
 {
   imports =
     [ 
@@ -11,6 +10,9 @@
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.firewall.enable = false;
+  services.resolved = {
+    enable = true;
+  };
 
   time.timeZone = "Asia/Shanghai";
 
@@ -46,16 +48,6 @@
     # Daily tool
     firefox
     google-chrome
-
-    # Hyprland
-    hyprland
-    hyprlock
-    hyprpaper
-    rofi-wayland
-    waybar
-    dunst
-    xdg-desktop-portal-hyprland
-    nwg-look
   ];
 
   programs.neovim = {
