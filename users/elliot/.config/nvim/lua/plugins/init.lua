@@ -27,6 +27,11 @@ return {
     event = "VeryLazy",
     opts = {}
   },
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+    opts = {}
+  },
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
