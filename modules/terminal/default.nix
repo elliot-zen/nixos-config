@@ -5,6 +5,7 @@
     ./neovim
     ./tmux
     ./k9s
+    ./starship
   ];
   programs.fzf = {
     enable = true;
