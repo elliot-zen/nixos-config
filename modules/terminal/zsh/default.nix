@@ -4,14 +4,14 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     defaultKeymap = "emacs";
-    # oh-my-zsh = {
-    #   theme = "robbyrussell";
-    #   enable = true;
-    #   plugins = [
-    #     "git"
-    #     "direnv"
-    #   ];
-    # };
+    oh-my-zsh = {
+      theme = "robbyrussell";
+      enable = true;
+      plugins = [
+        "git"
+        "direnv"
+      ];
+    };
     shellAliases = {
       gui = "gitui";
       v = "nvim";

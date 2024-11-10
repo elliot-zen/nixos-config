@@ -6,10 +6,6 @@
   programs.home-manager.enable = true;
   home.packages = [];
 
-  home.shellAliases = {
-    v = "nvim";
-  };
-
   programs.git = {
     enable = true;
     userName = "elliot";
