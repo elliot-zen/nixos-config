@@ -4,7 +4,7 @@
   ];
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
-  home.packages = [];
+  home.packages = with pkgs; [ go ];
 
   programs.git = {
     enable = true;
