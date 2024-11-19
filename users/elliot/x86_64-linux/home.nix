@@ -28,18 +28,12 @@
     enable = true;
   };
 
-  xdg = {
-    enable = true;
-    cacheHome = "${config.home.homeDirectory}/.cache";
-    configHome = "${config.home.homeDirectory}/.config";
-    dataHome = "${config.home.homeDirectory}/.local/share";
-    stateHome = "${config.home.homeDirectory}/.local/state";
-
-    userDirs = {
-      enable = true;
-    };
+  home.file = {
+    ".config/nvim".source = ../.config/nvim;
+    ".config/hypr".source = ../.config/hypr;
+    ".config/rofi".source = ../.config/rofi;
+    ".config/waybar".source = ../.config/waybar;
   };
-
   # home.activation.configDotfile = lib.hm.dag.entryAfter ["writeBoundary"] ''
   #   ${pkgs.rsync}/bin/rsync -avz --chmod=D2755,F744 ${../.config}/ ${config.xdg.configHome}/
   # '';
