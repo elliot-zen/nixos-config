@@ -13,21 +13,18 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager,nix-darwin,...}@inputs: 
-  let 
-    mkSystem = import ./lib/mksystem.nix {
-      inherit nixpkgs inputs;
+  outputs = {...} @ inputs: let
+    myLib = import ./lib/default.nix {
+      inherit inputs;
     };
   in
-    {
-      nixosConfigurations.nixos = mkSystem "nixos"{
-        system = "x86_64-linux";
-        user = "elliot";
+    with myLib; {
+      nixosConfigurations = {
+        nixos = mkSystem ./hosts/nixos/configuration.nix;
       };
-      darwinConfigurations."zhaokaideMacBook-Pro" = mkSystem "zhaokaideMacBook-Pro"{
-        system = "aarch64-darwin";
-        user = "elliot";
-        darwin = true;
+      homeConfigurations = {
+        "elliot" = mkHome "x86_64-linux" ./hosts/nixos/home.nix;
       };
+      homeManagerModules.default = ./homeManagerModules;
     };
 }
