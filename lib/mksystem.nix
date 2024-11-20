@@ -11,7 +11,7 @@ let
   userHMConfig = ../users/${user}/${system}/home.nix;
 
   systemFunc = if darwin then inputs.nix-darwin.lib.darwinSystem else nixpkgs.lib.nixosSystem;
-  home-manager = if darwin then inputs.home-manager.darwinModules else inputs.home-manager.nixosModules;
+  home-manager-module = if darwin then inputs.home-manager.darwinModules else inputs.home-manager.nixosModules;
 in systemFunc rec {
   inherit system;
 
@@ -19,7 +19,7 @@ in systemFunc rec {
     {nixpkgs.config.allowUnfree = true; }
     machineConfig
     userConfig
-    home-manager.home-manager {
+    home-manager-module.home-manager {
       home-manager.backupFileExtension = "backup";
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
