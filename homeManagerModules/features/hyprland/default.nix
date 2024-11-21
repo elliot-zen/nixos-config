@@ -14,5 +14,8 @@
     waybar
     dunst
     nwg-look
+
+    kitty
+    clash-verge-rev
   ];
 }
