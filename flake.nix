@@ -23,7 +23,8 @@
         nixos = mkSystem ./hosts/nixos/configuration.nix;
       };
       homeConfigurations = {
-        "elliot" = mkHome "x86_64-linux" ./hosts/nixos/home.nix;
+        "elliot@nixos" = mkHome "x86_64-linux" ./hosts/nixos/home.nix;
+        "darwin" = mkHome "aarch64-darwin" ./hosts/darwin/home.nix;
       };
       homeManagerModules.default = ./homeManagerModules;
     };
