@@ -12,6 +12,10 @@
     bat
     fzf
 
+    tree-sitter
+    nodejs
+    typescript
+    typescript-language-server
     nixd
     alejandra
     lua-language-server

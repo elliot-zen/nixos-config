@@ -2,7 +2,11 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
+    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,6 +14,9 @@
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
     };
   };
 
@@ -27,5 +34,6 @@
         "darwin" = mkHome "aarch64-darwin" ./hosts/darwin/home.nix;
       };
       homeManagerModules.default = ./homeManagerModules;
+      nixosModules.default = ./nixosModules;
     };
 }

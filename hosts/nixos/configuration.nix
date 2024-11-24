@@ -3,6 +3,10 @@
     ./harware-configuraion.nix
   ];
 
+  myNixOS = {
+    bundles.cosmic-desktop.enable = true;
+  };
+
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -40,7 +44,6 @@
     pulse.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Command tool
     git
@@ -48,10 +51,10 @@
     wget
     ripgrep
     unzip
+    gcc
 
     # Daily tool
     firefox
-    google-chrome
   ];
 
   programs.neovim = {
@@ -64,7 +67,7 @@
   fonts.packages = with pkgs; [
     jetbrains-mono
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     font-awesome
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
