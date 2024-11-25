@@ -1,14 +1,20 @@
-{config, lib, pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   myHomeManager = {
     zsh.enable = lib.mkDefault true;
     tmux.enable = lib.mkDefault true;
-    starship.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
+    direnv.enable = lib.mkDefault true;
+    gitui.enable = lib.mkDefault true;
   };
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     bat
     fzf
 
@@ -19,6 +25,7 @@
     nixd
     alejandra
     lua-language-server
+    rust-analyzer
   ];
 
   programs.git = {
