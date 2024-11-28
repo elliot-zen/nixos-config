@@ -31,5 +31,8 @@
       glo = "git log --oneline --decorate";
       glog = "git log --oneline --decorate --graph";
     };
+    envExtra = ''
+      export LC_ALL=en_US.UTF-8
+    '';
   };
 }
