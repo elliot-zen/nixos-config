@@ -1,10 +1,11 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     keyMode = "vi";
     clock24 = true;
     mouse = true;
     terminal = "xterm-256color";
+    shell = "${pkgs.zsh}/bin/zsh";
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
@@ -12,8 +13,7 @@
       }
     ];
     extraConfig = ''
-      set -g mouse on 
-
+      set -g default-command "$SHELL"
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 

@@ -7,5 +7,6 @@
   };
   myHomeManager = {
     bundles.general.enable = true;
+    alacritty.enable = true;
   };
 }

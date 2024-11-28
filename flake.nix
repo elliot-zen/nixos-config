@@ -2,11 +2,7 @@
   description = "Example Darwin system flake";
 
   inputs = {
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-      follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
