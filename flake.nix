@@ -11,9 +11,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags = {
-      url = "github:aylur/ags";
-    };
   };
 
   outputs = {...} @ inputs: let
@@ -30,6 +27,5 @@
         "darwin" = mkHome "aarch64-darwin" ./hosts/darwin/home.nix;
       };
       homeManagerModules.default = ./homeManagerModules;
-      nixosModules.default = ./nixosModules;
     };
 }

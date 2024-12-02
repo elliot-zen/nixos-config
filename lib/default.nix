@@ -11,7 +11,6 @@ in rec {
       };
       modules = [
         config
-        outputs.nixosModules.default
       ];
     };
 

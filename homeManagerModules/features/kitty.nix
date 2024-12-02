@@ -1,10 +1,14 @@
-{config, pkgs, ...}:{
-   programs.kitty = {
-     enable = true;
+{
+  config,
+  pkgs,
+  ...
+}: {
+  programs.kitty = {
+    enable = true;
     themeFile = "Catppuccin-Mocha";
     font = {
-    name = "JetBrains Mono";
-    size = 12;
+      name = "JetBrains Mono";
+      size = 12;
     };
-   };
+  };
 }

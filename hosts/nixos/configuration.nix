@@ -1,11 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./harware-configuraion.nix
+    ./hardware-configuration.nix
   ];
-
-  myNixOS = {
-    bundles.cosmic-desktop.enable = true;
-  };
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -47,30 +43,25 @@
   environment.systemPackages = with pkgs; [
     # Command tool
     git
+    gcc
     vim
     wget
-    ripgrep
-    unzip
-    gcc
-
-    # Daily tool
-    firefox
   ];
 
+  programs.hyprland.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    font-awesome
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+  fonts.packages = [
+    pkgs.jetbrains-mono
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-emoji
+    pkgs.font-awesome
   ];
 
   i18n.inputMethod = {

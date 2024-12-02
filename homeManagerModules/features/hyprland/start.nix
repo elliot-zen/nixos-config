@@ -4,8 +4,6 @@
       exec-once = [
         "fcitx5 -d -r"
         "wl-paste --watch cliphist store"
-        "hyprpaper"
-        "ags run"
       ];
     };
   };
