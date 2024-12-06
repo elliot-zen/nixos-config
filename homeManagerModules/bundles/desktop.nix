@@ -14,7 +14,7 @@
     wl-clipboard
 
     firefox
-    clash-verge-rev
+    clash-nyanpasu
   ];
 
   home.pointerCursor = {

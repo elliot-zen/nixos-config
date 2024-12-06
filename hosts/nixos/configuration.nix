@@ -56,13 +56,15 @@
 
   system.stateVersion = "24.11";
 
-  fonts.packages = [
-    pkgs.jetbrains-mono
-    pkgs.noto-fonts
-    pkgs.noto-fonts-cjk-sans
-    pkgs.noto-fonts-emoji
-    pkgs.font-awesome
-  ];
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      font-awesome
+      nerd-fonts.jetbrains-mono
+    ];
+  };
 
   i18n.inputMethod = {
     enable = true;
@@ -75,10 +77,10 @@
   };
   programs.zsh.enable = true;
   users = {
-  	defaultUserShell = pkgs.zsh;
-	users.elliot = {
-		isNormalUser = true;
-		extraGroups = [ "wheel" "networkmanager" "docker"];
-	};
+    defaultUserShell = pkgs.zsh;
+    users.elliot = {
+      isNormalUser = true;
+      extraGroups = ["wheel" "networkmanager" "docker"];
+    };
   };
 }

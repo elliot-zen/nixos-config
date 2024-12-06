@@ -10,6 +10,7 @@
     dunst
     nwg-look
 
+    nautilus
   ];
 
   wayland.windowManager.hyprland = {
