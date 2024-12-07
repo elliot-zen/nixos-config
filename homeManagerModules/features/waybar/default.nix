@@ -11,7 +11,7 @@
         position = "top";
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window"];
-        modules-right = ["clock" "pulseaudio" "network" "tray"];
+        modules-right = ["tray" "clock" "pulseaudio" "network"];
         "hyprland/workspaces" = {
           disable-scroll = true;
           sort-by-name = true;
@@ -80,8 +80,6 @@
         font-family: JetBrains Nerd Font Mono;
         font-size: 14px;
         min-height: 0;
-        padding: 0;
-        margin: 0;
       }
 
       window#waybar {

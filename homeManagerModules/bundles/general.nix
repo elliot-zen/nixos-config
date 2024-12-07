@@ -18,7 +18,6 @@
 
   home.packages = with pkgs; [
     bat
-    fzf
 
     tree-sitter
     nodejs
@@ -44,5 +43,10 @@
   programs.eza = {
     enable = true;
     icons = "auto";
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
