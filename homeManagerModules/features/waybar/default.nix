@@ -21,7 +21,7 @@
           spacing = 10;
         };
         clock = {
-          timezone = "Asia/Dubai";
+          timezone = "Asia/Shanghai";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = " {:%d/%m/%Y}";
           format = " {:%H:%M}";
