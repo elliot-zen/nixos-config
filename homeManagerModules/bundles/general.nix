@@ -33,6 +33,24 @@
     enable = true;
     userName = "elliot";
     userEmail = "elliotzen256@gmail.com";
+    extraConfig = {
+      core = {
+        autocrlf = "input";
+        editor = "nvim";
+      };
+      merge = {
+        conflictstyle = "zdiff3";
+      };
+    };
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        dark = true;
+        line-numbers = true;
+        # side-by-side = true;
+      };
+    };
   };
 
   programs.zoxide = {

@@ -9,11 +9,14 @@
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
-        extraConfig = "set -g @catppuccin_flavor 'mocha'";
+        extraConfig = ''
+          set -g @catppuccin_flavor 'mocha'
+          set -g @catppuccin_window_default_text "#W"
+          set -g @catppuccin_window_current_text "#W"
+        '';
       }
     ];
     extraConfig = ''
-      set -g default-command "$SHELL"
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
