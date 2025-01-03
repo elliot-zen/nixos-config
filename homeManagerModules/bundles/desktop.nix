@@ -17,7 +17,7 @@
     slurp
 
     firefox
-    clash-nyanpasu
+    clash-verge-rev
   ];
 
   home.pointerCursor = {

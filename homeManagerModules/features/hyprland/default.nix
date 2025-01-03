@@ -2,6 +2,8 @@
   imports = [
     ./keymaps.nix
     ./start.nix
+    ./rules.nix
+    ./hyprpaper.nix
   ];
 
   home.packages = with pkgs; [
