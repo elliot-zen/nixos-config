@@ -18,6 +18,7 @@
 
   home.packages = with pkgs; [
     bat
+    httpie
 
     tree-sitter
     nodejs
