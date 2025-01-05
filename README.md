@@ -9,3 +9,9 @@ nix run home-manager/master -- init --switch
 shell
 ```
 
+## Volume
+```sh
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 20%-
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 20%+
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+```
