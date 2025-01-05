@@ -12,7 +12,7 @@
     username = "elliot";
     homeDirectory = "/home/elliot";
     packages = with pkgs; [
-      ripgrep
+      mihomo
     ];
   };
   myHomeManager = {

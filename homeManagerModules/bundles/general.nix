@@ -20,6 +20,7 @@
     jq
     bat
     httpie
+    ripgrep
 
     tree-sitter
     nodejs

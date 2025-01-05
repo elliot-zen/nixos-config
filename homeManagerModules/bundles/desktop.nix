@@ -17,7 +17,6 @@
     slurp
 
     firefox
-    clash-verge-rev
   ];
 
   home.pointerCursor = {
