@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     # Hyprland
     hyprland
+    hyprpaper
     dunst
     nwg-look
 
