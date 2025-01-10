@@ -7,6 +7,7 @@
     hyprland.enable = lib.mkDefault true;
     rofi.enable = lib.mkDefault true;
     waybar.enable = lib.mkDefault true;
+    dunst.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
   };
 

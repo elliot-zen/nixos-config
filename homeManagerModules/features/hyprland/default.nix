@@ -10,7 +10,6 @@
     # Hyprland
     hyprland
     hyprpaper
-    dunst
     nwg-look
 
     nautilus
