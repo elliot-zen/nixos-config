@@ -81,6 +81,18 @@
       rime-data
     ];
   };
+
+  virtualisation.docker = {
+    enable = true;
+    daemon = {
+      settings = {
+        proxies = {
+          http-proxy = "http://127.0.0.1:7890";
+          https-proxy = "http://127.0.0.1:7890";
+        };
+      };
+    };
+  };
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
