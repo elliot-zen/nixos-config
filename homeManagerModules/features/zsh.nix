@@ -23,6 +23,9 @@
       gui = "gitui";
       v = "nvim";
     };
+    initExtra = ''
+      unset -m "DIRENV_*"
+    '';
     envExtra = ''
       export LC_ALL=en_US.UTF-8
       export NVM_DIR="$HOME/.nvm"

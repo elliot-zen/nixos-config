@@ -8,6 +8,11 @@
       enable = true;
       enableZshIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
+      config = {
+        globl = {
+          hide_env_diff = true;
+        };
+      };
     };
   };
 }

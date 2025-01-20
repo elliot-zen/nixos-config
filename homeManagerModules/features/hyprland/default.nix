@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     # Hyprland
     hyprland
-    hyprpaper
     nwg-look
 
     nautilus
