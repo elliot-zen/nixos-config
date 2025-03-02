@@ -6,6 +6,7 @@
     ./hyprpaper.nix
   ];
 
+  home.file."Pictures/wallhaven-gpr2g7.jpg".source = ./asset/wallhaven-gpr2g7.jpg;
   home.packages = with pkgs; [
     # Hyprland
     hyprland
@@ -17,7 +18,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = "HDMI-A-1,1980x1080@200,auto,auto,transform, 0";
       env = [
         "XCURSOR_SIZE,24"
       ];
