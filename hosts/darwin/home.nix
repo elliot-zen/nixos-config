@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     kubernetes-helm
     delta
+    graphviz
   ];
 
 }

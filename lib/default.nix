@@ -14,6 +14,16 @@ in rec {
       ];
     };
 
+  mkDarwinSystem = config:
+    inputs.nix-darwin.lib.darwinSystem {
+      specialArgs = {
+        inherit inputs outputs myLib;
+      };
+      modules = [
+        config
+      ];
+    };
+
   mkHome = sys: config:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = pkgsFor sys;
