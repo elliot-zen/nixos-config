@@ -41,9 +41,9 @@
       name = "Adwaita";
     };
 
-    # font = {
-    #   name = "Sans";
-    #   size = 11;
-    # };
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 11;
+    };
   };
 }

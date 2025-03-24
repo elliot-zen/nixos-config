@@ -26,6 +26,7 @@
     username = "elliot";
     homeDirectory = "/home/elliot";
     packages = with pkgs; [
+      code-cursor
       mihomo-party
     ];
   };

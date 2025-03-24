@@ -30,6 +30,7 @@
 
   # pipewire
   hardware.pulseaudio.enable = false;
+  hardware.opengl.enable = true;
   # sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -70,6 +71,45 @@
       jetbrains-mono
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
+    fontconfig = {
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="font">
+            <edit mode="assign" name="antialias">
+              <bool>true</bool>
+            </edit>
+          </match>
+
+          <match>
+            <test compare="contains" name="lang">
+              <string>zh_CN</string>
+            </test>
+            <edit mode="prepend" name="family">
+              <string>Noto Sans CJK SC</string>
+            </edit>
+          </match>
+
+           <match target="pattern">
+              <test qual="any" name="family">
+                <string>sans-serif</string></test>
+              <edit name="family" mode="prepend" binding="same">
+                <string>Noto Sans CJK SC</string>
+              </edit>
+          </match>
+
+          <match target="pattern">
+            <test qual="any" name="family">
+              <string>serif</string>
+            </test>
+            <edit name="family" mode="prepend" binding="same">
+              <string>Noto Serif</string>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
+    };
   };
 
   i18n.inputMethod = {
