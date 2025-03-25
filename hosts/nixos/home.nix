@@ -1,24 +1,11 @@
 {
   pkgs,
-  inputs,
   ...
 }: {
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
-    overlays = [
-      (final: prev: {
-        mihomo-party = prev.mihomo-party.overrideAttrs (f: p:
-          with pkgs; {
-            version = "1.6.0";
-            src = fetchurl {
-              url = "https://github.com/mihomo-party-org/mihomo-party/releases/download/v${f.version}/mihomo-party-linux-${f.version}-amd64.deb";
-              hash = "sha256-dcjw4qGs6Q04LzY2cQLB8DrLybXFH8qFGZfLGz2aBM0=";
-            };
-          });
-      })
-    ];
   };
 
   home = {
@@ -28,6 +15,7 @@
     packages = with pkgs; [
       code-cursor
       mihomo-party
+      zathura
     ];
   };
   myHomeManager = {

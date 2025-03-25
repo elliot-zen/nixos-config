@@ -66,10 +66,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       font-awesome
-      # After 25.05
-      # nerd-fonts.jetbrains-mono
-      jetbrains-mono
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      nerd-fonts.jetbrains-mono
     ];
     fontconfig = {
       localConf = ''
