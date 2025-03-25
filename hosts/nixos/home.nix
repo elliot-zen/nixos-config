@@ -15,7 +15,6 @@
     packages = with pkgs; [
       code-cursor
       mihomo-party
-      zathura
     ];
   };
   myHomeManager = {
@@ -31,4 +30,11 @@
     	exec systemd-cat -t uwsm_start uwsm start default
     fi
   '';
+
+  programs.zathura = {
+    enable = true;
+    extraConfig = ''
+      set selection-clipboard clipboard
+    '';
+  };
 }
