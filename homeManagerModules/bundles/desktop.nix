@@ -42,7 +42,7 @@
     };
 
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Noto Sans Mono";
       size = 11;
     };
   };
