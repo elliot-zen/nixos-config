@@ -42,7 +42,7 @@
     };
 
     font = {
-      name = "Noto Sans Mono";
+      name = "Noto Sans";
       size = 11;
     };
   };

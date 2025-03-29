@@ -14,7 +14,7 @@
       enable = true;
       plugins = [
         "git"
-        "direnv"
+        "fzf"
       ];
     };
     plugins = [
