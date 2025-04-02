@@ -42,8 +42,8 @@
     };
 
     font = {
-      name = "Noto Sans";
-      size = 11;
+      name = "Maple Mono CN";
+      size = 12;
     };
   };
 }

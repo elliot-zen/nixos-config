@@ -10,7 +10,7 @@
       enableZshIntegration = true;
     };
     font = {
-      name = "JetBrains Mono";
+      name = "JetBrainsMono Nerd Font";
       size = 12;
     };
     settings = {

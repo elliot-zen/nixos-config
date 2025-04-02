@@ -62,6 +62,7 @@
 
   fonts = {
     packages = with pkgs; [
+      maple-mono.CN
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
@@ -80,19 +81,30 @@
     ];
   };
 
-  virtualisation.docker = {
-    enable = true;
-    daemon = {
-      settings = {
-        proxies = {
-          http-proxy = "http://127.0.0.1:7890";
-          https-proxy = "http://127.0.0.1:7890";
+  virtualisation = {
+    docker = {
+      enable = true;
+      daemon = {
+        settings = {
+          proxies = {
+            http-proxy = "http://127.0.0.1:7890";
+            https-proxy = "http://127.0.0.1:7890";
+          };
         };
       };
     };
+    virtualbox = {
+      host.enable = true;
+    };
   };
+
   programs.zsh.enable = true;
   users = {
+    extraGroups = {
+      vboxusers = {
+        members = ["user-with-access-to-virtualbox"];
+      };
+    };
     defaultUserShell = pkgs.zsh;
     users.elliot = {
       isNormalUser = true;
