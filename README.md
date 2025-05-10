@@ -22,6 +22,10 @@ darwin-help
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 20%-
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 20%+
 wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# Change source/slink
+wpctl status 
+wpctl set-default ID
 ```
 
 ## GC

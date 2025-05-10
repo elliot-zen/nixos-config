@@ -13,9 +13,15 @@
     username = "elliot";
     homeDirectory = "/home/elliot";
     packages = with pkgs; [
-      code-cursor
       mihomo-party
+      localsend
+      vscode
+
       minikube
+      kubernetes-helm
+      kubectl
+      telepresence2
+      k9s
     ];
   };
   myHomeManager = {

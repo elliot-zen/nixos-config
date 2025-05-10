@@ -16,6 +16,9 @@
           set -g @catppuccin_window_current_text "#{b:pane_current_path}"
         '';
       }
+      {
+        plugin = tmuxPlugins.yank;
+      }
     ];
     extraConfig = ''
       bind '"' split-window -c "#{pane_current_path}"

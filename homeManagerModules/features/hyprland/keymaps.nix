@@ -13,6 +13,7 @@
         "$mainMod, J, togglesplit, # dwindle"
         "$mainMod SHIFT, return, fullscreen,"
         "$mainMod, L, exec, hyprlock"
+        "ALT,Tab, cyclenext"
         "$mainMod SHIFT, C, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mainMod SHIFT, left, swapwindow, l"
         "$mainMod SHIFT, right, swapwindow, r"

@@ -4,8 +4,7 @@
   ...
 }: {
   myHomeManager = {
-    hyprland.enable = lib.mkDefault true;
-    rofi.enable = lib.mkDefault true;
+    hyprland.enable = lib.mkDefault true; rofi.enable = lib.mkDefault true;
     waybar.enable = lib.mkDefault true;
     dunst.enable = lib.mkDefault true;
     kitty.enable = lib.mkDefault true;
@@ -18,6 +17,7 @@
     slurp
 
     firefox
+    xdg-utils
   ];
 
   home.pointerCursor = {
@@ -42,8 +42,17 @@
     };
 
     font = {
-      name = "Maple Mono CN";
+      name = "Noto Sans CJK SC";
       size = 12;
     };
   };
+
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 }
+
+
