@@ -23,11 +23,11 @@
         nixos = mkSystem ./hosts/nixos/configuration.nix;
       };
       darwinConfigurations = {
-        "zhaokaideMacBook-Pro" = mkDarwinSystem ./hosts/darwin/configuration.nix;
+        "ElliotMBP" = mkDarwinSystem ./hosts/darwin/configuration.nix;
       };
       homeConfigurations = {
         "elliot@nixos" = mkHome "x86_64-linux" ./hosts/nixos/home.nix;
-        "darwin" = mkHome "aarch64-darwin" ./hosts/darwin/home.nix;
+        "elliot" = mkHome "aarch64-darwin" ./hosts/darwin/home.nix;
       };
       homeManagerModules.default = ./homeManagerModules;
     };

@@ -25,4 +25,9 @@
       options = "--delete-older-than 30d";
     };
   };
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+  };
 }
