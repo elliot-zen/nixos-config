@@ -15,7 +15,11 @@
     packages = with pkgs; [
       mihomo-party
       localsend
-      vscode
+      vscode-fhs
+      dbeaver-bin
+      typora
+      obs-studio
+      vlc
 
       minikube
       kubernetes-helm

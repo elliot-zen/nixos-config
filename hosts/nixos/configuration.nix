@@ -40,8 +40,11 @@
   };
 
   # pipewire
-  hardware.pulseaudio.enable = false;
-  hardware.opengl.enable = true;
+  services.pulseaudio.enable = false;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
   # sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -77,43 +80,79 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       noto-fonts-emoji
-      font-awesome
       nerd-fonts.jetbrains-mono
     ];
     fontconfig = {
       defaultFonts = {
         serif = [
-          "Noto Serif CJK SC"
           "Noto Serif"
+          "Noto Serif CJK SC"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         sansSerif = [
-          "Noto Sans CJK SC"
           "Noto Sans"
+          "Noto Sans CJK SC"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         monospace = [
-          "Noto Sans Mono CJK SC"
           "JetBrainsMono Nerd Font"
+          "Noto Mono"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
       };
       localConf = ''
         <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
         <fontconfig>
           <match target="font">
-            <edit name="hintstyle" mode="assign"><const>hintslight</const></edit>
-            <edit name="autohint" mode="assign"><bool>true</bool></edit>
-            <edit name="antialias" mode="assign"><bool>true</bool></edit>
-            <edit name="rgba" mode="assign"><const>rgb</const></edit>
-            <edit name="lcdfilter" mode="assign"><const>lcddefault</const></edit>
+            <edit name="antialias" mode="assign">
+              <bool>true</bool>
+            </edit>
+          </match>
+          <match>
+            <edit name="hinting" mode="assign">
+              <bool>true</bool>
+            </edit>
+          </match>
+          <match>
+            <edit name="rgba" mode="assign">
+              <const>rgb</const>
+            </edit>
+          </match>
+          <match>
+            <edit name="hintstyle" mode="assign">
+              <const>hintslight</const>
+            </edit>
+          </match>
+          <match>
+            <edit name="lcdfilter" mode="assign">
+              <const>lcdlight</const>
+            </edit>
+          </match>
+          <match>
+            <edit name="embeddedbitmap" mode="assign">
+              <bool>false</bool>
+            </edit>
           </match>
           <match target="pattern">
-            <test name="family">
+            <test qual="any" name="family">
               <string>Arial</string>
             </test>
-            <edit name="family" mode="prepend" binding="strong">
+            <edit name="family" mode="assign" binding="same">
               <string>Noto Sans CJK SC</string>
-              <string>Noto Sans</string>
+            </edit>
+          </match>
+          <match target="pattern">
+            <test qual="any" name="family">
+              <string>Times New Roman</string>
+            </test>
+            <edit name="family" mode="assign" binding="same">
+              <string>Noto Serif CJK SC</string>
             </edit>
           </match>
         </fontconfig>
@@ -134,12 +173,15 @@
   virtualisation = {
     docker = {
       enable = true;
+      enableOnBoot = false;
       daemon = {
         settings = {
-          proxies = {
-            http-proxy = "http://127.0.0.1:7890";
-            https-proxy = "http://127.0.0.1:7890";
-          };
+          # proxies = {
+          #   http-proxy = "http://127.0.0.1:7890";
+          #   https-proxy = "http://127.0.0.1:7890";
+          # };
+          insecure-registries = ["core.harbor.domain"];
+          registry-mirrors = ["https://docker.1ms.run"];
         };
       };
     };

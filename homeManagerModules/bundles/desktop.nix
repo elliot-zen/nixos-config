@@ -6,7 +6,7 @@
   myHomeManager = {
     hyprland.enable = lib.mkDefault true; rofi.enable = lib.mkDefault true;
     waybar.enable = lib.mkDefault true;
-    dunst.enable = lib.mkDefault true;
+    dunst.enable = lib.mkDefault false;
     kitty.enable = lib.mkDefault true;
   };
 
@@ -17,6 +17,7 @@
     slurp
 
     firefox
+    google-chrome
     xdg-utils
   ];
 

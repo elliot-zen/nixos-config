@@ -22,6 +22,7 @@
     shellAliases = {
       gui = "gitui";
       v = "nvim";
+      k = "kubectl";
     };
     initExtra = ''
       unset -m "DIRENV_*"
