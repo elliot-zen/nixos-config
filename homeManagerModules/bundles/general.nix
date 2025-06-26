@@ -6,12 +6,13 @@
 }: {
   myHomeManager = {
     zsh.enable = lib.mkDefault true;
-    tmux.enable = lib.mkDefault true;
     yazi.enable = lib.mkDefault true;
     direnv.enable = lib.mkDefault true;
     gitui.enable = lib.mkDefault true;
     starship.enable = lib.mkDefault true;
-    k9s.enable = lib.mkDefault true;
+    zellij.enable = lib.mkDefault true;
+    k9s.enable = lib.mkDefault false;
+    tmux.enable = lib.mkDefault false;
   };
 
   programs.home-manager.enable = true;

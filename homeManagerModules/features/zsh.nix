@@ -8,23 +8,28 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    defaultKeymap = "emacs";
-    oh-my-zsh = {
-      theme = "robbyrussell";
+    syntaxHighlighting = {
       enable = true;
-      plugins = [
-        "git"
-        "fzf"
-      ];
     };
+    defaultKeymap = "emacs";
     plugins = [
+      {
+        name = "git";
+        file = "init.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "zimfw";
+          repo = "git";
+          rev = "226b1dd1f0c5363f175dca677b49f43d24be9c11";
+          sha256 = "sha256-O47n7a+0yokTu9pd5BKTNsthUQ7DxqW5z3ChaL8FZ8k=";
+        };
+      }
     ];
     shellAliases = {
       gui = "gitui";
       v = "nvim";
       k = "kubectl";
     };
-    initExtra = ''
+    initContent = ''
       unset -m "DIRENV_*"
     '';
     envExtra = ''

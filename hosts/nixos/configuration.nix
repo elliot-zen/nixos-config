@@ -78,81 +78,32 @@
 
   fonts = {
     packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-emoji
+      wqy_microhei
       nerd-fonts.jetbrains-mono
     ];
     fontconfig = {
       defaultFonts = {
         serif = [
-          "Noto Serif"
-          "Noto Serif CJK SC"
-          "Noto Color Emoji"
-          "Noto Emoji"
+          "WenQuanYi Micro Hei"
         ];
         sansSerif = [
-          "Noto Sans"
-          "Noto Sans CJK SC"
-          "Noto Color Emoji"
-          "Noto Emoji"
+          "WenQuanYi Micro Hei"
         ];
         monospace = [
+          "WenQuanYi Micro Hei"
           "JetBrainsMono Nerd Font"
-          "Noto Mono"
-          "Noto Color Emoji"
-          "Noto Emoji"
         ];
       };
       localConf = ''
         <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
         <fontconfig>
-          <match target="font">
-            <edit name="antialias" mode="assign">
-              <bool>true</bool>
-            </edit>
-          </match>
-          <match>
-            <edit name="hinting" mode="assign">
-              <bool>true</bool>
-            </edit>
-          </match>
-          <match>
-            <edit name="rgba" mode="assign">
-              <const>rgb</const>
-            </edit>
-          </match>
-          <match>
-            <edit name="hintstyle" mode="assign">
-              <const>hintslight</const>
-            </edit>
-          </match>
-          <match>
-            <edit name="lcdfilter" mode="assign">
-              <const>lcdlight</const>
-            </edit>
-          </match>
-          <match>
-            <edit name="embeddedbitmap" mode="assign">
-              <bool>false</bool>
-            </edit>
-          </match>
           <match target="pattern">
-            <test qual="any" name="family">
+            <test name="family" compare="contains">
               <string>Arial</string>
             </test>
-            <edit name="family" mode="assign" binding="same">
-              <string>Noto Sans CJK SC</string>
-            </edit>
-          </match>
-          <match target="pattern">
-            <test qual="any" name="family">
-              <string>Times New Roman</string>
-            </test>
-            <edit name="family" mode="assign" binding="same">
-              <string>Noto Serif CJK SC</string>
+            <edit name="family" binding="strong">
+              <string>WenQuanYi Micro Hei</string>
             </edit>
           </match>
         </fontconfig>

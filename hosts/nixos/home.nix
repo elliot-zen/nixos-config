@@ -17,6 +17,7 @@
       localsend
       vscode-fhs
       dbeaver-bin
+      obsidian
       typora
       obs-studio
       vlc
